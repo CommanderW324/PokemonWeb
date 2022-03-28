@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom"
+import * as components from "./components";
 
 function App() {
+  const initialLoginState = () => {
+    if (!localStorage.hasOwnProperty("dollarfinderlogin")) {
+      return false;
+    } else {
+      return JSON.parse(localStorage.getItem("dollarfinderlogin")).loginState;
+    }
+  };
+  const [loginState, setLoginState] = React.useState(initialLoginState());
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="body">
+      Halo World
     </div>
   );
 }
