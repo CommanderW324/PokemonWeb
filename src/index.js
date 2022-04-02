@@ -4,14 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {Login, Dashboard, CatchPokemon} from './components';
+import {Login, Dashboard, CatchPokemonPage} from './components';
+
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
         <Route path="login" element={<Login />}/> 
         <Route path="dashboard" element={<Dashboard/>}/>
-        <Route path="catch" element={<CatchPokemon/>}/>
+        <Route path="catch" element={<CatchPokemonPage/>}/>
       <Route/>
     </Routes>
   </BrowserRouter>,
